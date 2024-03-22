@@ -1,0 +1,7 @@
+.github
+.vscode
+backend
+frontend
+generator-foodq
+.gitignore
+.npmignore
