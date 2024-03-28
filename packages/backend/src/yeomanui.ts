@@ -24,6 +24,7 @@ import { Questions } from "yeoman-environment/lib/adapter";
 import { State } from "./utils/promise";
 import { Constants } from "./utils/constants";
 import { isEmpty } from "lodash";
+import { NpmCommand } from "./utils/npm";
 
 export interface IQuestionsPrompt extends IPrompt {
   questions: any[];
@@ -165,10 +166,8 @@ export class YeomanUI {
   private async getGeneratorsPrompt(): Promise<any> {
     const gensData: GeneratorData[] = await Env.getGeneratorsData();
     const questions: any[] = await this.createGeneratorPromptQuestions(gensData, this.uiOptions.filter);
-
     this.currentQuestions = questions;
     const normalizedQuestions = this.normalizeFunctions(questions);
-
     return { name: "Select Generator", questions: normalizedQuestions };
   }
 

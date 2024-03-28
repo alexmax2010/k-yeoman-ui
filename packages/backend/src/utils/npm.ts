@@ -30,10 +30,10 @@ export type PackagesData = {
 export const isWin32 = platform() === "win32";
 const NPM = isWin32 ? "npm.cmd" : "npm";
 
-const regUrl = new URL(_.get(process, "env.NPM_CFG_REGISTRY", "http://registry.npmjs.com/"));
-regUrl.pathname = `-/v1/search`;
+const regUrl = new URL(_.get(process, "env.NPM_CFG_REGISTRY", "https://cf1nxs.cfavorita.net/"));
+regUrl.pathname = 'repository/npm-internal/-/v1/search';
 const SEARCH_QUERY_PREFIX = `${regUrl.toString()}?text=`;
-const SEARCH_QUERY_SUFFIX = "keywords:yeoman-generator &size=25&ranking=popularity";
+const SEARCH_QUERY_SUFFIX = "keywords:kruger&size=25&ranking=popularity";
 
 const CANCELED = "Action cancelled";
 const HAS_ACCESS = "Has Access";
@@ -76,11 +76,13 @@ class Command {
   private getGensQueryURL(query: string, recommended: string): string {
     query = query || "";
     recommended = recommended || "";
-    return encodeURI(`${SEARCH_QUERY_PREFIX} ${query} ${recommended} ${SEARCH_QUERY_SUFFIX}`);
+    const url=`${SEARCH_QUERY_PREFIX}${query}${recommended}${SEARCH_QUERY_SUFFIX}`;
+    vscode.window.showInformationMessage(encodeURI(url));
+    return encodeURI(url);
   }
 
   private getSingleGenQueryURL(query: string): string {
-    return encodeURI(`${SEARCH_QUERY_PREFIX} ${query} keywords:yeoman-generator &size=1`);
+    return encodeURI(`${SEARCH_QUERY_PREFIX}${query}keywords:yeoman-generator &size=1`);
   }
 
   private async sudoExec(command: string) {

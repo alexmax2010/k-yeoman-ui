@@ -35,7 +35,7 @@ class EnvUtil {
 
   constructor() {
     try {
-      this.logger = getClassLogger(EnvUtil.name);
+     // this.logger = getClassLogger(EnvUtil.name);
     } catch (e) {
       // nothing TODO : testing scope
     }

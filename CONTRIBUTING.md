@@ -3,14 +3,6 @@
 This is the common top-level contribution guide for this monorepo.
 A sub-package **may** have an additional CONTRIBUTING.md file if needed.
 
-## Legal
-
-All contributors must sign the DCO
-
-- https://cla-assistant.io/SAP/yeoman-ui
-
-This is managed automatically via https://cla-assistant.io/ pull request voter.
-
 ## Development Environment
 
 ### pre-requisites
