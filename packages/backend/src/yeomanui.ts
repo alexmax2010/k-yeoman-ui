@@ -60,9 +60,9 @@ export class YeomanUI {
 
   private readonly flowState: State<void>;
 
-  private readonly TARGET_FOLDER_CONFIG_PROP = "ApplicationWizardK.TargetFolder";
-  private readonly SELECTED_WORKSPACE_CONFIG_PROP = "ApplicationWizardK.Workspace";
-  private readonly HIDE_GENERATORS_PROP = "ApplicationWizardK.HideGenerator";
+  private readonly TARGET_FOLDER_CONFIG_PROP = "k-yeoman-ui.TargetFolder";
+  private readonly SELECTED_WORKSPACE_CONFIG_PROP = "k-yeoman-ui.Workspace";
+  private readonly HIDE_GENERATORS_PROP = "k-yeoman-ui.HideGenerator";
   private onUncaughtException: (e: Error) => void;
 
   constructor(
@@ -207,7 +207,6 @@ export class YeomanUI {
         logger: this.logger.getChildLogger({ label: generatorNamespace }),
         vscode: getVscode(), // TODO: remove this temporary workaround once a better solution is found,
         data: this.uiOptions.data,
-        tracker: AnalyticsWrapper.getTracker(),
         appWizard: this.youiEvents.getAppWizard(),
       };
 
@@ -504,7 +503,7 @@ export class YeomanUI {
             text: "Preferences",
             command: {
               id: "workbench.action.openSettings",
-              params: [`ApplicationWizardK.TargetFolder`],
+              params: [`k-yeoman-ui.TargetFolder`],
             },
           },
         },
@@ -522,7 +521,7 @@ export class YeomanUI {
             text: "Preferences",
             command: {
               id: "workbench.action.openSettings",
-              params: [`ApplicationWizardK.Workspace`],
+              params: [`k-yeoman-ui.Workspace`],
             },
           },
         },

@@ -1,4 +1,4 @@
-![GitHub license](https://img.shields.io/badge/license-Apache_2.0-blue.svg)
+![Kruger license](https://img.shields.io/badge/license-Apache_2.0-blue)
 
 # Application Wizard Kruger
 

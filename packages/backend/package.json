@@ -1,6 +1,6 @@
 {
   "name": "k-yeoman-ui",
-  "displayName": "Application Wizard Kruger",
+  "displayName": "k-yeoman-ui",
   "version": "1.15.0",
   "private": true,
   "description": "Provides rich user experience for Yeoman generators.",
@@ -11,7 +11,8 @@
     "yeoman",
     "yo",
     "wizard",
-    "generator"
+    "generator",
+    "k-yeoman-ui"
   ],
   "bugs": {
     "url": "https://github.com/kruger/yeoman-ui/issues"
@@ -22,9 +23,9 @@
   },
   "license": "Apache 2.0",
   "author": {
-    "name": "Kruger Corp"
+    "name": "Kruger-Corp"
   },
-  "publisher": "Kruger Corp",
+  "publisher": "Kruger-Corp",
   "main": "./dist/extension",
   "scripts": {
     "bundle": "webpack --mode production",
@@ -73,15 +74,23 @@
     ],
     "configuration": {
       "type": "object",
-      "title": "Application Wizard Kruger",
+      "title": "k-yeoman-ui",
       "properties": {
-        "ApplicationWizardK.enableSapWebAnalytics": {
-          "type": "boolean",
-          "default": false,
-          "description": "Enable collecting usage analytics data for Application Wizard Kruger.  If enabled, non-personally identifiable information is used to help understand the product usage and improve the tool.",
-          "scope": "resource"
+        "k-yeoman-ui.RegistryUrl": {
+          "type": "string",
+          "default": "https://cf1nxs.cfavorita.net/",
+          "description": "Registry url.",
+          "scope": "resource",
+          "order": 1
         },
-        "ApplicationWizardK.loggingLevel": {
+        "k-yeoman-ui.RegitryPath": {
+          "type": "string",
+          "default": "repository/npm-internal/-/v1/search",
+          "description": "Registry path.",
+          "scope": "resource",
+          "order": 2
+        },
+        "k-yeoman-ui.loggingLevel": {
           "type": "string",
           "enum": [
             "off",
@@ -96,19 +105,19 @@
           "description": "The verbosity of logging according to the following order: trace > debug > info > warn > error > fatal > off.",
           "scope": "resource"
         },
-        "ApplicationWizardK.HideGenerator": {
+        "k-yeoman-ui.HideGenerator": {
           "type": "string",
           "default": "",
           "description": "Hide generators from the generator list. The generator name should be in the following format: namespace:generator-name. Generators must be separated by commas.",
           "scope": "resource"
         },
-        "ApplicationWizardK.TargetFolder": {
+        "k-yeoman-ui.TargetFolder": {
           "type": "string",
           "default": "",
           "description": "Set the default target folder path for the project.",
           "scope": "resource"
         },
-        "ApplicationWizardK.Workspace": {
+        "k-yeoman-ui.Workspace": {
           "type": "string",
           "enum": [
             "Open the project in a stand-alone folder",
@@ -119,22 +128,22 @@
           "description": "Define the preferred behavior upon project creation.",
           "scope": "resource"
         },
-        "ApplicationWizardK.sourceLocationTracking": {
+        "k-yeoman-ui.sourceLocationTracking": {
           "type": "boolean",
           "default": false,
           "description": "If chosen, the location of the source code is added to log entries. Warning – this action may slow your extension. We recommend you use it only for debugging.",
           "scope": "resource"
         },
-        "ApplicationWizardK.installationLocation": {
+        "k-yeoman-ui.installationLocation": {
           "type": "string",
           "markdownDescription": "Set the default folder in which generators will be installed. The path to this folder must be valid. If there is no path defined, the global location will be used."
         },
-        "ApplicationWizardK.autoUpdate": {
+        "k-yeoman-ui.autoUpdate": {
           "type": "boolean",
           "default": true,
           "description": "Automatically update installed generators."
         },
-        "ApplicationWizardK.searchQuery": {
+        "k-yeoman-ui.searchQuery": {
           "type": "array",
           "default": [
             "Kruger"
@@ -161,7 +170,35 @@
           "when": "yeomanUI.Focused"
         }
       ]
-    }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "package-explorer",
+          "title": "k-yeoman-ui",
+          "icon": "$(file-code)"
+        }
+      ]
+    },
+    "views": {
+      "package-explorer": [
+        {
+          "id": "k-yeoman-ui-home",
+          "name": "Home"
+        },
+        {
+          "id": "package-outline",
+          "name": "Outline"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "k-yeoman-ui-home",
+        "contents": "\n[Template wizard](command:loadYeomanUI)\n[Install generators](command:exploreGenerators)\n",
+        "when": "true"
+      }
+    ]
   },
   "activationEvents": [
     "*"

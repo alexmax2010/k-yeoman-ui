@@ -497,7 +497,7 @@ module.exports = class extends Generator {
             text: "Preferences",
             command: {
               id: "workbench.action.openSettings",
-              params: ["ApplicationWizardK.Workspace"],
+              params: ["k-yeoman-ui.Workspace"],
             },
           },
         },

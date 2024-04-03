@@ -29,8 +29,8 @@ export class ExploreGens {
 
   private readonly GLOBAL_ACCEPT_LEGAL_NOTE = "global.exploreGens.acceptlegalNote";
   private readonly LAST_AUTO_UPDATE_DATE = "global.exploreGens.lastAutoUpdateDate";
-  private readonly SEARCH_QUERY = "ApplicationWizardK.searchQuery";
-  private readonly AUTO_UPDATE = "ApplicationWizardK.autoUpdate";
+  private readonly SEARCH_QUERY = "k-yeoman-ui.searchQuery";
+  private readonly AUTO_UPDATE = "k-yeoman-ui.autoUpdate";
   private readonly ONE_DAY = 1000 * 60 * 60 * 24;
 
   constructor(logger: IChildLogger, context?: any) {

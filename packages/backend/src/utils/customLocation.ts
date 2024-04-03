@@ -5,7 +5,7 @@ import { isEmpty, trim } from "lodash";
 import { vscode } from "./vscodeProxy";
 import { execSync } from "child_process";
 
-export const GLOBAL_CONFIG_KEY = "ApplicationWizardK.installationLocation";
+export const GLOBAL_CONFIG_KEY = "k-yeoman-ui.installationLocation";
 
 const getAbsoluteCustomPath = (): string | undefined => {
   let customPath = trim(vscode.workspace.getConfiguration().get(GLOBAL_CONFIG_KEY));

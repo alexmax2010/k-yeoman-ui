@@ -30,10 +30,7 @@ export type PackagesData = {
 export const isWin32 = platform() === "win32";
 const NPM = isWin32 ? "npm.cmd" : "npm";
 
-const regUrl = new URL(_.get(process, "env.NPM_CFG_REGISTRY", "https://cf1nxs.cfavorita.net/"));
-regUrl.pathname = 'repository/npm-internal/-/v1/search';
-const SEARCH_QUERY_PREFIX = `${regUrl.toString()}?text=`;
-const SEARCH_QUERY_SUFFIX = "keywords:kruger&size=25&ranking=popularity";
+
 
 const CANCELED = "Action cancelled";
 const HAS_ACCESS = "Has Access";
@@ -41,8 +38,18 @@ const HAS_ACCESS = "Has Access";
 class Command {
   private globalNodeModulesPathPromise: Promise<string>;
   private readonly SET_DEFAULT_LOCATION;
+  private regUrl: URL;
+  private readonly SEARCH_QUERY_PREFIX;
+  private readonly SEARCH_QUERY_SUFFIX;
 
   constructor() {
+    let registryUrl = _.trim(vscode.workspace.getConfiguration().get('k-yeoman-ui.RegistryUrl'));
+    let registryPath = _.trim(vscode.workspace.getConfiguration().get('k-yeoman-ui.RegitryPath'));
+    this.regUrl = new URL(_.get(process, "env.NPM_CFG_REGISTRY", registryUrl));
+    this.regUrl.pathname = registryPath;
+    this.SEARCH_QUERY_PREFIX = `${this.regUrl.toString()}?text=`;
+    this.SEARCH_QUERY_SUFFIX = "keywords:kruger&size=25&ranking=popularity";
+
     this.setGlobalNodeModulesPath();
     this.SET_DEFAULT_LOCATION = messages.set_default_location(customLocation.DEFAULT_LOCATION);
   }
@@ -76,13 +83,12 @@ class Command {
   private getGensQueryURL(query: string, recommended: string): string {
     query = query || "";
     recommended = recommended || "";
-    const url=`${SEARCH_QUERY_PREFIX}${query}${recommended}${SEARCH_QUERY_SUFFIX}`;
-    vscode.window.showInformationMessage(encodeURI(url));
+    const url=`${this.SEARCH_QUERY_PREFIX}${query}${recommended}${this.SEARCH_QUERY_SUFFIX}`;
     return encodeURI(url);
   }
 
   private getSingleGenQueryURL(query: string): string {
-    return encodeURI(`${SEARCH_QUERY_PREFIX}${query}keywords:yeoman-generator &size=1`);
+    return encodeURI(`${this.SEARCH_QUERY_PREFIX}${query}keywords:yeoman-generator &size=1`);
   }
 
   private async sudoExec(command: string) {
