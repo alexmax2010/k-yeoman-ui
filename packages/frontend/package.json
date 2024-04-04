@@ -1,7 +1,7 @@
 {
   "name": "yeoman-ui-frontend",
   "displayName": "Application Wizard Kruger Frontend",
-  "version": "1.15.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Frontend for the Application Wizard Kruger framework",
   "license": "Apache 2.0",

@@ -1,7 +1,7 @@
 {
   "name": "k-yeoman-ui",
   "displayName": "k-yeoman-ui",
-  "version": "1.15.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Provides rich user experience for Yeoman generators.",
   "categories": [

@@ -4,9 +4,9 @@
 
 ## Description
 
-[yeoman-ui](https://github.com/SAP/yeoman-ui) is a graphical user interface for running Yeoman generators. It runs as a [Visual Studio Code extension](https://code.visualstudio.com/api), or as a standalone web application for _development_ purposes.
+[yeoman-ui](https://github.com/kruger/yeoman-ui) is a graphical user interface for running Yeoman generators. It runs as a [Visual Studio Code extension](https://code.visualstudio.com/api), or as a standalone web application for _development_ purposes.
 
-This repo contains a sample Yeoman generator that includes different Yeoman capabilities, including different Inquirer [prompt types](https://github.com/SBoudrias/Inquirer.js/blob/master/README.md#prompt-types), [question properties](https://github.com/SBoudrias/Inquirer.js/blob/master/README.md#question).
+This repo contains a sample Yeoman generator that includes different Yeoman capabilities, including different Inquirer [prompt types](https://github.com/kruger/Inquirer.js/blob/master/README.md#prompt-types), [question properties](https://github.com/kruger/Inquirer.js/blob/master/README.md#question).
 
 Specifically, it includes dynamic questions (`message`, `when()`, `validate()`, etc.).
 

@@ -26,7 +26,8 @@
     ]
   },
   "scripts": {
-    "ciKruger": "npm-run-all coverage:clean  legal:* ci:subpackages",
+    "ciKruger": "npm-run-all coverage:clean  legal:* ciKruger:subpackages",
+    "ciKruger:subpackages": "lerna run ciKruger",
     "ci": "npm-run-all coverage:clean format:validate lint:validate legal:* ci:subpackages",
     "ci:subpackages": "lerna run ci",
     "compile": "lerna run clean && tsc --build",
