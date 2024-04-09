@@ -20,7 +20,7 @@ export function getLoggingLevelSetting(): LogLevel {
  */
 export function getSourceLocationTrackingSetting(): boolean {
   const config = vscode.workspace.getConfiguration();
-  return config.get(SOURCE_TRACKING_CONFIG_PROP);
+  return config.get(SOURCE_TRACKING_CONFIG_PROP)? config.get(SOURCE_TRACKING_CONFIG_PROP):false
 }
 
 module.exports = {
