@@ -1,4 +1,4 @@
-![Kruger license](https://img.shields.io/badge/license-Apache_2.0-blue)
+![Kruger Corp](https://img.shields.io/badge/Kruger_Corp_®-Copyright_2022-blue)
 
 # Application Wizard Kruger
 
