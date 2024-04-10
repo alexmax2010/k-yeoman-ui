@@ -1,4 +1,6 @@
-# Contribution Guide
+![Kruger Corp](https://img.shields.io/badge/Kruger_Corp_®-Copyright_2022-blue)
+
+ Contribution Guide
 
 This is the common top-level contribution guide for this monorepo.
 A sub-package **may** have an additional CONTRIBUTING.md file if needed.

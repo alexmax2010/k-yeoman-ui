@@ -1,7 +1,5 @@
-const selectGeneratorQuestionHint =
-  "When you create a project using a template, you become the code owner and, as such, you are responsible for any required updates or fixes. We recommend following the industry best practice to use automated vulnerability scanning in the CI/CD pipeline to avoid supply-chain attack and other cyberattacks.";
-const selectTargetFolderQuestionHint =
-  "The project will contain the relevant files and configurations required to create your application";
+const selectGeneratorQuestionHint = "Kruger project builder with the necessary integrations and configurations to get started";
+const selectTargetFolderQuestionHint = "Kruger Corp® Copyright";  
 const selectWhereToOpenTheProjectQuestionHint = "Where do you want to open the project?";
 const artifact_generated_project = `The project has been generated`;
 
