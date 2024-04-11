@@ -1,5 +1,5 @@
-const selectGeneratorQuestionHint = "Kruger project builder with the necessary integrations and configurations to get started";
-const selectTargetFolderQuestionHint = "Kruger Corp® Copyright";  
+const selectGeneratorQuestionHint = "Project generator with the necessary integrations and configurations to start development";
+const selectTargetFolderQuestionHint = "Agile software development";  
 const selectWhereToOpenTheProjectQuestionHint = "Where do you want to open the project?";
 const artifact_generated_project = `The project has been generated`;
 
