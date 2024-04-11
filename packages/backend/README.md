@@ -8,7 +8,7 @@ With the Application Wizard Kruger extension, you can benefit from a rich user e
 
 ## Requirements
 
-- [node.js](https://www.npmjs.com/package/node) version 10 or higher.
+- [node.js](https://www.npmjs.com/package/node) version 14.15.0
 - [VSCode](https://code.visualstudio.com/) 1.39.2 or higher.
 
 ## Installation
